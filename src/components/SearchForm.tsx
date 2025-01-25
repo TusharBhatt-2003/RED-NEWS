@@ -16,10 +16,7 @@ const SearchForm: React.FC<SearchFormProps> = ({
   onSearch,
 }) => {
   return (
-    <form
-      onSubmit={onSearch}
-      className="flex flex-col sm:flex-row gap-4 mb-6"
-    >
+    <form onSubmit={onSearch} className="flex flex-col sm:flex-row gap-4 mb-6">
       <input
         type="text"
         placeholder="Search topic (e.g., Tesla)"

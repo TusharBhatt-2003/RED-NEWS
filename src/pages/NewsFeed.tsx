@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useFetchNews, { Article } from "../hooks/useFetchNews";
 import SearchForm from "../components/SearchForm";
 import NewsCard from "../components/NewsCard";
-import { SkeletonCard } from "../components/SkeletonCard.tsx"; // Import SkeletonCard
+import { SkeletonCard } from "../components/SkeletonCard"; // Import SkeletonCard
 
 const NewsFeed: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>("tesla");
@@ -12,12 +12,9 @@ const NewsFeed: React.FC = () => {
     return date.toISOString().split("T")[0];
   });
 
-  const apiKey = "b48b77b9a6bf4fc2a01b69605564ce15"; // Replace with your API key
-
   const { articles, loading, error, fetchNews } = useFetchNews(
     searchQuery,
     fromDate,
-    apiKey
   );
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {

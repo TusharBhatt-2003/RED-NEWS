@@ -14,7 +14,7 @@ export interface Article {
   content: string;
 }
 
-const useFetchNews = (searchQuery: string, fromDate: string, apiKey: string) => {
+const useFetchNews = (searchQuery: string, fromDate: string) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -23,7 +23,12 @@ const useFetchNews = (searchQuery: string, fromDate: string, apiKey: string) => 
     setLoading(true);
     setError(null);
 
-    const url = `https://newsapi.org/v2/everything?q=${searchQuery}&from=${fromDate}&sortBy=publishedAt&apiKey=${apiKey}`;
+    const apiKey = import.meta.env.VITE_API_KEY;
+    const apiUrl = import.meta.env.VITE_API_URL;
+    console.log(import.meta.env.VITE_API_KEY); // Will log: b48b77b9a6bf4fc2a01b69605564ce15
+    console.log(import.meta.env.VITE_API_URL); // Will log: https://newsapi.org/v2/everything?q=
+
+    const url = `${apiUrl}?q=${searchQuery}&from=${fromDate}&sortBy=publishedAt&apiKey=${apiKey}`;
 
     try {
       const response = await fetch(url);

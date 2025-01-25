@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lexend+Giga:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Lexend+Giga:wght@100..900&display=swap");
 @import "tailwindcss";
 
 body {
-    background-color: #000000;
-    color: white;
-  }
+  background-color: #000000;
+  color: white;
+}
 
 .red {
-    background: #FB0434;
+  background: #fb0434;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
-  background: #FB0434;
+  background: #fb0434;
   border-radius: 10px;
 }
 
@@ -26,6 +26,6 @@ body {
   font-family: "Lexend Giga", serif;
 }
 
-.inconsolata{
+.inconsolata {
   font-family: "Inconsolata", serif;
 }
